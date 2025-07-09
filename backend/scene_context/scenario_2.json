@@ -1,0 +1,42 @@
+{
+  "timestamp": "2025-07-09T10:45:30Z",
+  "location": "main_hall",
+  "summary": "Large crowd gathered for an event, people standing in groups, no visible smoke or fire.",
+  "tags": ["crowd", "event"],
+  "sentiment": "excited",
+  "grouping_behavior": "clustered",
+  "scene_stats": {
+    "total_people": 220,
+    "zone_breakdown": {
+      "entrance": 30,
+      "exit": 25,
+      "seating": 120,
+      "stages": 30,
+      "aisles": 15
+    },
+    "average_velocity": "low",
+    "flow_direction": "towards stage"
+  },
+  "anomalies": [],
+  "potential_anomalies": [
+    {
+      "type": "overcrowding",
+      "confidence": 0.72,
+      "description": "High density of people near the front stage area"
+    }
+  ],
+  "lost_and_found": {
+    "present": false,
+    "items": []
+  },
+  "recommendations": [
+    {
+      "action": "monitor_density",
+      "priority": "medium",
+      "justification": "Potential overcrowding near stage; monitor for safety compliance"
+    }
+  ],
+  "agent_triggers": [
+    "density_monitor_agent"
+  ]
+}

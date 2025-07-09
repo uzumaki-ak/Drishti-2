@@ -1,0 +1,64 @@
+{
+  "timestamp": "2025-07-08T14:21:15Z",
+  "location": "auditorium",
+  "summary": "A moderately crowded auditorium scene with people seated, some moving toward exits. Smoke visible in the food court area.",
+  "tags": ["crowd", "smoke", "alert"],
+  "sentiment": "anxious",
+  "grouping_behavior": "clustered",
+  "scene_stats": {
+    "total_people": 132,
+    "zone_breakdown": {
+      "entrance": 15,
+      "exit": 20,
+      "seating": 75,
+      "stages": 10,
+      "aisles": 12
+    },
+    "average_velocity": "medium",
+    "flow_direction": "towards exit"
+  },
+  "anomalies": [
+    {
+      "type": "smoke",
+      "confidence": 0.91,
+      "severity": "medium",
+      "zone": "food_court",
+      "description": "Thick gray smoke rising from one of the vendor stalls in the food court"
+    }
+  ],
+  "potential_anomalies": [
+    {
+      "type": "bottleneck_forming",
+      "confidence": 0.66,
+      "description": "A dense group of people slowing movement near exit gate 3"
+    }
+  ],
+  "lost_and_found": {
+    "present": true,
+    "items": [
+      {
+        "object_type": "child",
+        "confidence": 0.93,
+        "location": "stage left",
+        "description": "Young child standing alone and crying near the exit stairs"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "action": "broadcast_alert",
+      "priority": "high",
+      "justification": "Smoke detected in food court; alert required to guide safe evacuation"
+    },
+    {
+      "action": "dispatch_security",
+      "priority": "medium",
+      "justification": "Unattended child detected near the stage"
+    }
+  ],
+  "agent_triggers": [
+    "anomaly_agent",
+    "lost_found_agent",
+    "dispatch_agent"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-07-09T11:15:45Z",
+  "location": "lobby",
+  "summary": "Moderate foot traffic with people entering and exiting. Wet floor signage placed due to spill.",
+  "tags": ["crowd", "spill"],
+  "sentiment": "neutral",
+  "grouping_behavior": "dispersed",
+  "scene_stats": {
+    "total_people": 85,
+    "zone_breakdown": {
+      "entrance": 20,
+      "exit": 15,
+      "seating": 30,
+      "stages": 0,
+      "aisles": 20
+    },
+    "average_velocity": "medium",
+    "flow_direction": "random"
+  },
+  "anomalies": [
+    {
+      "type": "spill",
+      "confidence": 0.88,
+      "severity": "low",
+      "zone": "entrance",
+      "description": "Liquid spill detected near the main entrance, signage placed"
+    }
+  ],
+  "potential_anomalies": [],
+  "lost_and_found": {
+    "present": false,
+    "items": []
+  },
+  "recommendations": [
+    {
+      "action": "notify_cleaning_staff",
+      "priority": "low",
+      "justification": "Spill detected; cleaning required despite signage"
+    }
+  ],
+  "agent_triggers": [
+    "anomaly_agent",
+    "cleaning_agent"
+  ]
+}

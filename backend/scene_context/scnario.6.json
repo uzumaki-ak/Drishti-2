@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-07-09T12:55:10Z",
+  "location": "parking_lot",
+  "summary": "Sparse foot traffic with vehicles entering and exiting. One car parked improperly, blocking lane.",
+  "tags": ["vehicle", "blockage"],
+  "sentiment": "calm",
+  "grouping_behavior": "dispersed",
+  "scene_stats": {
+    "total_people": 25,
+    "zone_breakdown": {
+      "entrance": 3,
+      "exit": 5,
+      "seating": 0,
+      "stages": 0,
+      "aisles": 17
+    },
+    "average_velocity": "medium",
+    "flow_direction": "towards exit"
+  },
+  "anomalies": [
+    {
+      "type": "vehicle_blockage",
+      "confidence": 0.92,
+      "severity": "medium",
+      "zone": "lane 2",
+      "description": "Black SUV parked across two lanes, blocking traffic flow"
+    }
+  ],
+  "potential_anomalies": [],
+  "lost_and_found": {
+    "present": false,
+    "items": []
+  },
+  "recommendations": [
+    {
+      "action": "dispatch_security",
+      "priority": "high",
+      "justification": "Blocked lane may cause traffic congestion and safety issues"
+    }
+  ],
+  "agent_triggers": [
+    "anomaly_agent",
+    "dispatch_agent"
+  ]
+}

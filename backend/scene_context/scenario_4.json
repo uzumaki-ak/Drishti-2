@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-07-09T11:50:00Z",
+  "location": "conference_room_b",
+  "summary": "Small group discussion ongoing. No unusual movement or anomalies detected.",
+  "tags": ["meeting"],
+  "sentiment": "focused",
+  "grouping_behavior": "clustered",
+  "scene_stats": {
+    "total_people": 18,
+    "zone_breakdown": {
+      "entrance": 2,
+      "exit": 1,
+      "seating": 15,
+      "stages": 0,
+      "aisles": 0
+    },
+    "average_velocity": "low",
+    "flow_direction": "stationary"
+  },
+  "anomalies": [],
+  "potential_anomalies": [],
+  "lost_and_found": {
+    "present": false,
+    "items": []
+  },
+  "recommendations": [],
+  "agent_triggers": []
+}

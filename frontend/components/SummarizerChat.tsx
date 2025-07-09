@@ -46,17 +46,32 @@ export default function SummarizerChat() {
     setInputValue("")
     setIsTyping(true)
 
-    // TODO: Replace with actual API call to Gemini AI
-    setTimeout(() => {
+    try {
+      // Call Flask backend API
+      const response = await fetch("http://localhost:5000/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: inputValue, scenario_id: "scenario_1" }), // scenario_id can be dynamic if needed
+      })
+      const data = await response.json()
       const aiResponse: Message = {
         id: messages.length + 2,
-        content: `Based on the current event data, I can provide the following insights: ${inputValue.includes("summary") ? "Event attendance is at 85% capacity with 3 active incidents currently being managed. Crowd flow is within normal parameters." : "I understand your query. Let me analyze the relevant data and provide you with actionable insights."}`,
+        content: data.response || "Sorry, I couldn't generate a response.",
         sender: "ai",
         timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       }
       setMessages((prev) => [...prev, aiResponse])
+    } catch (error) {
+      const aiResponse: Message = {
+        id: messages.length + 2,
+        content: "Error: Unable to connect to AI server.",
+        sender: "ai",
+        timestamp: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+      }
+      setMessages((prev) => [...prev, aiResponse])
+    } finally {
       setIsTyping(false)
-    }, 2000)
+    }
   }
 
   const handleKeyPress = (e: React.KeyboardEvent) => {

@@ -1,0 +1,55 @@
+{
+  "timestamp": "2025-07-09T12:20:30Z",
+  "location": "cafeteria",
+  "summary": "High activity during lunch hour, people forming queues at stalls, no visible hazards.",
+  "tags": ["crowd", "queue"],
+  "sentiment": "content",
+  "grouping_behavior": "linear_queue",
+  "scene_stats": {
+    "total_people": 160,
+    "zone_breakdown": {
+      "entrance": 25,
+      "exit": 10,
+      "seating": 90,
+      "stages": 0,
+      "aisles": 35
+    },
+    "average_velocity": "low",
+    "flow_direction": "towards stalls"
+  },
+  "anomalies": [],
+  "potential_anomalies": [
+    {
+      "type": "long_queue",
+      "confidence": 0.79,
+      "description": "Queue length exceeding recommended limits near vendor stall 5"
+    }
+  ],
+  "lost_and_found": {
+    "present": true,
+    "items": [
+      {
+        "object_type": "wallet",
+        "confidence": 0.95,
+        "location": "table near window",
+        "description": "Brown leather wallet left unattended on table near window"
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "action": "notify_vendor",
+      "priority": "low",
+      "justification": "Long queue forming; consider additional counter opening"
+    },
+    {
+      "action": "dispatch_security",
+      "priority": "low",
+      "justification": "Wallet left unattended; secure for lost and found"
+    }
+  ],
+  "agent_triggers": [
+    "queue_monitor_agent",
+    "lost_found_agent"
+  ]
+}
